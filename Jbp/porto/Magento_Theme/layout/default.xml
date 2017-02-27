@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-	<body>		
-		
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<body>	
 		<referenceBlock	name="logo">
 			<action	method="setLogoFile">
 				<argument name="logo_file" xsi:type="string">images/logo.png</argument>
@@ -29,9 +28,20 @@
 							<argument name="label" xsi:type="string">Meu Carrinho</argument>
 							<argument name="path" xsi:type="string">checkout/cart</argument>
 						</arguments>
-					</block>
-				
-			</block>
-		</referenceBlock>						
+					</block>				
+			</block>			
+		</referenceBlock>
+		
+		<!-- referenciando um bloco customizado -->
+			<referenceBlock name="footer_links_account">
+				<block class="Magento\Framework\View\Element\Html\Link\Current" name="my-link-custom">
+					<arguments>
+						<argument name="label" xsi:type="string">Meu Link Customizado</argument>
+						<argument name="path" xsi:type="string">checkout/onepage</argument>
+						<!--argument name="label" xsi:type="string">Nome do Link Customizado</argument-->
+						<!--argument name="path" xsi:type="string">Path da URL</argument-->
+					</arguments>
+				</block>
+			</referenceBlock>						
 	</body>
 </page>
