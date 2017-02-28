@@ -1,0 +1,2 @@
+Chamando um bloco/cms em um conteudo cms
+	{{block class="Magento\Cms\Block\Block" block_id="identificador do bloco"}}

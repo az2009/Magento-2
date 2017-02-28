@@ -3,7 +3,10 @@
 
 <!-- adicionando custom css e js ao template -->
 	<head>
-		<css src="css/jbp_theme.css" />
+		<css src="css/jbp_theme1.css" />
 		<script	src="js/jbp_theme.js" />
+		<link rel="publisher" src="https://github.com/az2009"	/>
+		<link  rel="stylesheet" type="text/css"  media="all" href="http://m2.localhost:8000/media/styles.one.css" />           		
+		<meta name="author"	content="JBP Porto"	/>
 	</head>
 </page>

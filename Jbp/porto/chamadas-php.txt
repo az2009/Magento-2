@@ -1,0 +1,12 @@
+Chamando um bloco/cms via php
+	<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('indetificador_do_bloco')->toHtml();?>
+
+Chamando um bloco/template via php
+	<?php echo $block->getLayout()
+					 ->createBlock('Magento\Framework\View\Element\Template')
+					 ->setTemplate('path_to_template')
+				 	 ->toHtml();?>
+
+
+Instanciando um objeto de um bloco 	
+	<?php echo $block->getLayout()->createBlock('Vendor_Module\path_to_block') ?>

@@ -1,6 +1,33 @@
 <?xml version="1.0"?>
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-	<body>	
+
+<!-- definindo o layout da página para 1 coluna -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">	
+	<body>		
+		
+		<referenceContainer name="slider.container">
+			<container name="block.slider" htmlTag="div" htmlClass="bloco-slider" before="-">
+				<block class="Magento\Cms\Block\Block" name="teste_cms">
+			    	<arguments>
+			    		<argument name="block_id" xsi:type="string">teste</argument>
+			    	</arguments>
+			    </block>
+			</container>
+		</referenceContainer>
+		
+		<referenceContainer name="content">	   
+			
+			<!-- chamando um bloco cms via xml -->	    
+			    <block class="Magento\Cms\Block\Block" name="teste_cms">
+			    	<arguments>
+			    		<argument name="block_id" xsi:type="string">teste</argument>
+			    	</arguments>
+			    </block>
+		    
+		    <!-- chamando um bloco de template via xml -->
+		    	<block class="Magento\Framework\View\Element\Template" name="teste_phtml" template="Magento_Theme::custom/template.phtml" />
+		    
+		</referenceContainer>
+
 		<referenceBlock	name="logo">
 			<action	method="setLogoFile">
 				<argument name="logo_file" xsi:type="string">images/logo.png</argument>
@@ -42,6 +69,10 @@
 						<!--argument name="path" xsi:type="string">Path da URL</argument-->
 					</arguments>
 				</block>
-			</referenceBlock>						
+			</referenceBlock>		
 	</body>
+	
+	<!-- removendo um bloco ou container -->	
+		<referenceBlock name="footer__" remove="true" />
+		<referenceContainer name="content__" remove="true" />	
 </page>
