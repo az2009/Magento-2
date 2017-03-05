@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<!-- definindo o layout da página para 1 coluna -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">	
+	<body>
+		 		
+		<referenceContainer name="content">
+		    <!-- chamando um bloco de template via xml -->
+		    	<block class="Magento\Framework\View\Element\Template" 
+		    		   name="teste_phtml" 
+		    		   template="Magento_Theme::custom/template.phtml">
+    		   </block>
+		</referenceContainer>	
+	</body>
+</page>

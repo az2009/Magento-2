@@ -3,10 +3,17 @@
 
 <!-- adicionando custom css e js ao template -->
 	<head>
-		<css src="css/jbp_theme1.css" />
-		<script	src="js/jbp_theme.js" />
+		<css  src="css/jbp_theme1.css" />
 		<link rel="publisher" src="https://github.com/az2009"	/>
-		<link  rel="stylesheet" type="text/css"  media="all" href="http://m2.localhost:8000/media/styles.one.css" />           		
+		<link rel="stylesheet" type="text/css"  media="all" href="http://m2.localhost:8000/media/styles.one.css" />
+		<link src="https://fonts.googleapis.com/css?family=Pacifico" src_type="url"/>
+		<link rel="stylesheet" type="text/css"  media="all" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" src_type="url" />
+		<css  src="css/jquery.bxslider.css" />
+		<script	src="js/jbp_theme.js" />		
+
+		<!-- removendo um árquivo statico do tema -->
+			<remove src="js/jbp_theme.js" />
+
 		<meta name="author"	content="JBP Porto"	/>
 	</head>
 </page>

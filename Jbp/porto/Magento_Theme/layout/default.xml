@@ -3,17 +3,23 @@
 <!-- definindo o layout da página para 1 coluna -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">	
 	<body>		
-		
-		<referenceContainer name="slider.container">
-			<container name="block.slider" htmlTag="div" htmlClass="bloco-slider" before="-">
-				<block class="Magento\Cms\Block\Block" name="teste_cms">
-			    	<arguments>
-			    		<argument name="block_id" xsi:type="string">teste</argument>
-			    	</arguments>
-			    </block>
-			</container>
+
+		<!-- movendo um bloco -->
+			<move element="top.search" destination="header-wrapper" before="minicart" />
+		 	<move element="header.container" destination="page.wrapper" after="footer" />
+		 	<referenceContainer name="header.container__" remove="true"/>	
+		<referenceContainer name="page.wrapper">
+		    <container name="bloco.slider" htmlClass="blocoslider" htmlTag="div" after="page.top" />
 		</referenceContainer>
-		
+ 		
+ 		<referenceContainer name="bloco.slider">
+	 		<block class="Magento\Cms\Block\Block" name="teste_cms_2">
+		    	<arguments>
+		    		<argument name="block_id" xsi:type="string">teste2</argument>
+		    	</arguments>
+		    </block>
+ 		</referenceContainer>
+ 		
 		<referenceContainer name="content">	   
 			
 			<!-- chamando um bloco cms via xml -->	    
@@ -22,16 +28,22 @@
 			    		<argument name="block_id" xsi:type="string">teste</argument>
 			    	</arguments>
 			    </block>
-		    
-		    <!-- chamando um bloco de template via xml -->
-		    	<block class="Magento\Framework\View\Element\Template" name="teste_phtml" template="Magento_Theme::custom/template.phtml" />
-		    
 		</referenceContainer>
 
 		<referenceBlock	name="logo">
-			<action	method="setLogoFile">
-				<argument name="logo_file" xsi:type="string">images/logo.png</argument>
-			</action>
+		
+			<!-- declaração do logo do tema -->
+				<action	method="setLogoFile">
+					<argument name="logo_file" xsi:type="string">images/logo.png</argument>
+				</action>
+			
+			<!-- declaração do logo do tema e seu respectivo tamanho -->
+				<arguments>
+					<argument name="logo_file" xsi:type="string">images/logo.png</argument>
+					<argument name="logo_img_width" xsi:type="number">260</argument>
+					<argument name="logo_img_height" xsi:type="number">215</argument>
+				</arguments>
+			
 		</referenceBlock>
 		
 		<referenceBlock	name="footer">
